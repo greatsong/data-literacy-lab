@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { findLesson } from '../data/lessonRegistry';
 import LessonNav from '../components/layout/LessonNav';
@@ -16,6 +17,10 @@ function getLessonComponent(lessonId) {
 export default function LessonPage() {
   const { lessonId } = useParams();
   const info = findLesson(lessonId);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [lessonId]);
 
   if (!info) return <Navigate to="/" replace />;
 
