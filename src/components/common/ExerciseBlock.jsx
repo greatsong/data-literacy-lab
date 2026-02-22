@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Icon from './Icon';
 
 export default function ExerciseBlock({ title = '실습', children }) {
   const [collapsed, setCollapsed] = useState(false);
@@ -10,7 +11,7 @@ export default function ExerciseBlock({ title = '실습', children }) {
         onClick={() => setCollapsed(!collapsed)}
         className="w-full flex items-center gap-2 px-5 py-3 bg-primary-50 text-left cursor-pointer"
       >
-        <span className="text-lg">🎯</span>
+        <Icon name="target" size={20} className="text-primary-500" />
         <span className="font-semibold text-primary-800 flex-1">{title}</span>
         <span className="text-primary-400 text-sm">{collapsed ? '펼치기 ▼' : '접기 ▲'}</span>
       </button>

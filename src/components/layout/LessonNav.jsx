@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { getAdjacentLessons } from '../../data/lessonRegistry';
 import useProgressStore from '../../stores/progressStore';
+import Icon from '../common/Icon';
 
 export default function LessonNav({ lessonId }) {
   const { prev, next } = getAdjacentLessons(lessonId);
@@ -15,12 +16,12 @@ export default function LessonNav({ lessonId }) {
           onClick={() => completeLesson(lessonId)}
           className="w-full mb-6 py-3 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-xl transition-colors cursor-pointer"
         >
-          이 레슨 완료하기 ✓
+          <span className="inline-flex items-center gap-2">이 레슨 완료하기 <Icon name="check" size={16} className="text-white" /></span>
         </button>
       )}
       {completed && (
-        <div className="mb-6 py-3 text-center text-accent-600 font-semibold bg-accent-50 rounded-xl">
-          ✓ 이 레슨을 완료했습니다!
+        <div className="mb-6 py-3 flex items-center justify-center gap-2 text-accent-600 font-semibold bg-accent-50 rounded-xl">
+          <Icon name="check" size={18} className="text-accent-500" /> 이 레슨을 완료했습니다!
         </div>
       )}
 

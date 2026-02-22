@@ -1,6 +1,7 @@
 import { NavLink, useParams } from 'react-router-dom';
 import { modules } from '../../data/lessonRegistry';
 import useProgressStore from '../../stores/progressStore';
+import Icon from '../common/Icon';
 
 export default function Sidebar({ open, onClose }) {
   const { lessonId } = useParams();
@@ -52,7 +53,7 @@ export default function Sidebar({ open, onClose }) {
               <div key={mod.id} className="mb-2">
                 {/* 모듈 헤더 */}
                 <div className="flex items-center gap-2 px-3 py-2 text-sm font-semibold text-slate-600 uppercase tracking-wide">
-                  <span>{mod.emoji}</span>
+                  <Icon name={mod.icon} size={16} className="text-slate-500" />
                   <span className="flex-1 truncate">{mod.title}</span>
                   {progressPct > 0 && (
                     <span className="text-xs font-normal text-primary-500">{progressPct}%</span>
@@ -87,14 +88,14 @@ export default function Sidebar({ open, onClose }) {
                           }`}
                         >
                           {/* 완료 체크 */}
-                          <span className={`w-5 h-5 rounded-full border-2 flex items-center justify-center text-xs shrink-0 ${
+                          <span className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${
                             completed
                               ? 'bg-accent-500 border-accent-500 text-white'
                               : isActive
                                 ? 'border-primary-400'
                                 : 'border-slate-300'
                           }`}>
-                            {completed && '✓'}
+                            {completed && <Icon name="check" size={12} className="text-white" />}
                           </span>
                           <span className="truncate">{lesson.title}</span>
                         </NavLink>

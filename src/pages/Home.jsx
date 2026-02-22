@@ -2,22 +2,26 @@ import { Link } from 'react-router-dom';
 import { modules, totalLessons } from '../data/lessonRegistry';
 import useProgressStore from '../stores/progressStore';
 import ProgressBadge from '../components/common/ProgressBadge';
+import Icon from '../components/common/Icon';
 
 const colorMap = {
   primary: {
     card: 'border-primary-200 hover:border-primary-400 hover:shadow-primary-100',
     badge: 'bg-primary-100 text-primary-700',
     num: 'bg-primary-500',
+    iconColor: 'text-primary-500',
   },
   accent: {
     card: 'border-accent-200 hover:border-accent-400 hover:shadow-accent-100',
     badge: 'bg-accent-100 text-accent-700',
     num: 'bg-accent-500',
+    iconColor: 'text-accent-500',
   },
   warm: {
     card: 'border-warm-200 hover:border-warm-400 hover:shadow-warm-100',
     badge: 'bg-warm-100 text-warm-700',
     num: 'bg-warm-500',
+    iconColor: 'text-warm-600',
   },
 };
 
@@ -44,11 +48,11 @@ export default function Home() {
 
         {/* 통계 */}
         <div className="flex items-center justify-center gap-6 text-sm text-slate-500 mb-4">
-          <span>📚 {modules.length}개 모듈</span>
+          <span className="inline-flex items-center gap-1"><Icon name="books" size={16} className="text-slate-400" /> {modules.length}개 모듈</span>
           <span>·</span>
-          <span>📝 {totalLessons}개 레슨</span>
+          <span className="inline-flex items-center gap-1"><Icon name="memo" size={16} className="text-slate-400" /> {totalLessons}개 레슨</span>
           <span>·</span>
-          <span>⏱️ 약 {Math.round(modules.reduce((s, m) => s + m.lessons.reduce((ls, l) => ls + l.duration, 0), 0) / 60)}시간</span>
+          <span className="inline-flex items-center gap-1"><Icon name="timer" size={16} className="text-slate-400" /> 약 {Math.round(modules.reduce((s, m) => s + m.lessons.reduce((ls, l) => ls + l.duration, 0), 0) / 60)}시간</span>
         </div>
 
         {/* 전체 진행도 */}
@@ -79,7 +83,7 @@ export default function Home() {
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${
                   done ? 'bg-accent-500 text-white' : progress > 0 ? 'bg-primary-100 text-primary-600' : 'bg-slate-100 text-slate-400'
                 }`}>
-                  {done ? '✓' : i + 1}
+                  {done ? <Icon name="check" size={14} className="text-white" /> : i + 1}
                 </div>
                 {i < modules.length - 1 && (
                   <div className={`w-8 h-0.5 ${done ? 'bg-accent-400' : 'bg-slate-200'}`} />
@@ -107,7 +111,7 @@ export default function Home() {
                 <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white ${colors.num}`}>
                   {i + 1}
                 </span>
-                <span className="text-2xl">{mod.emoji}</span>
+                <Icon name={mod.icon} size={24} className={colors.iconColor} />
               </div>
               <h3 className="font-bold text-sm text-slate-800 mb-1 group-hover:text-primary-600 transition-colors leading-snug">
                 {mod.title}
@@ -129,17 +133,17 @@ export default function Home() {
       {/* 특징 소개 */}
       <div className="mt-14 grid sm:grid-cols-3 gap-6 text-center">
         <div className="p-4">
-          <div className="text-3xl mb-2">🎯</div>
+          <div className="flex justify-center mb-2"><Icon name="target" size={32} className="text-primary-500" /></div>
           <h4 className="font-bold text-slate-700 mb-1">실습 중심</h4>
           <p className="text-xs text-slate-500">읽고 바로 해보는 인터랙티브 위젯과 퀴즈로 개념을 체득합니다</p>
         </div>
         <div className="p-4">
-          <div className="text-3xl mb-2">📊</div>
+          <div className="flex justify-center mb-2"><Icon name="realData" size={32} className="text-accent-500" /></div>
           <h4 className="font-bold text-slate-700 mb-1">실제 데이터</h4>
           <p className="text-xs text-slate-500">200명 학생 설문과 10년간 기온 데이터로 현실적인 분석을 경험합니다</p>
         </div>
         <div className="p-4">
-          <div className="text-3xl mb-2">🧠</div>
+          <div className="flex justify-center mb-2"><Icon name="brain" size={32} className="text-warm-600" /></div>
           <h4 className="font-bold text-slate-700 mb-1">사고력 중심</h4>
           <p className="text-xs text-slate-500">도구 사용법이 아닌 데이터를 비판적으로 읽고 질문하는 힘을 키웁니다</p>
         </div>

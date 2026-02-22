@@ -3,7 +3,7 @@ export const modules = [
   {
     id: 'module1',
     title: '데이터란 무엇인가',
-    emoji: '📊',
+    icon: 'chart',
     description: '일상 속 데이터를 발견하고, 데이터의 종류와 품질을 이해합니다.',
     color: 'primary',
     lessons: [
@@ -15,7 +15,7 @@ export const modules = [
   {
     id: 'module2',
     title: '질문을 설계하라',
-    emoji: '❓',
+    icon: 'question',
     description: '막연한 궁금증을 데이터로 답할 수 있는 질문으로 변환합니다.',
     color: 'accent',
     lessons: [
@@ -27,7 +27,7 @@ export const modules = [
   {
     id: 'module3',
     title: '데이터는 어디서 오는가',
-    emoji: '🎯',
+    icon: 'target',
     description: '데이터 수집의 함정을 이해하고, 편향을 구별하는 눈을 키웁니다.',
     color: 'warm',
     lessons: [
@@ -39,7 +39,7 @@ export const modules = [
   {
     id: 'module4',
     title: '데이터 탐색하기',
-    emoji: '🔍',
+    icon: 'search',
     description: '실제 데이터를 직접 다루며 패턴과 이상치를 발견합니다.',
     color: 'primary',
     lessons: [
@@ -52,7 +52,7 @@ export const modules = [
   {
     id: 'module5',
     title: '시각화로 이야기하기',
-    emoji: '📈',
+    icon: 'trendUp',
     description: '데이터를 차트로 표현하고, 올바르게 읽는 법을 배웁니다.',
     color: 'accent',
     lessons: [
@@ -65,7 +65,7 @@ export const modules = [
   {
     id: 'module6',
     title: '분석하고 검증하기',
-    emoji: '🧪',
+    icon: 'flask',
     description: '상관관계와 인과관계를 구분하고, 분석 결과를 검증합니다.',
     color: 'warm',
     lessons: [
@@ -78,7 +78,7 @@ export const modules = [
   {
     id: 'module7',
     title: 'AI 활용과 데이터 윤리',
-    emoji: '🤖',
+    icon: 'robot',
     description: 'AI로 분석을 지시하는 법과 데이터를 윤리적으로 다루는 법을 배웁니다.',
     color: 'primary',
     lessons: [
@@ -91,7 +91,7 @@ export const modules = [
   {
     id: 'module8',
     title: '미니 ML 실험실',
-    emoji: '🧠',
+    icon: 'brain',
     description: '머신러닝의 기본 개념을 시각적으로 체험합니다.',
     color: 'accent',
     lessons: [

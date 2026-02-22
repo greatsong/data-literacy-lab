@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { findLesson } from '../data/lessonRegistry';
 import LessonNav from '../components/layout/LessonNav';
+import Icon from '../components/common/Icon';
 
 // 레슨 컴포넌트 동적 임포트
 const lessonComponents = import.meta.glob('../lessons/**/Lesson*.jsx', { eager: true });
@@ -31,7 +32,7 @@ export default function LessonPage() {
       {/* 레슨 헤더 */}
       <div className="mb-8">
         <div className="flex items-center gap-2 text-sm text-slate-400 mb-2">
-          <span>{info.module.emoji}</span>
+          <Icon name={info.module.icon} size={16} className="text-slate-400" />
           <span>{info.module.title}</span>
           <span>·</span>
           <span>{info.lesson.duration}분</span>
@@ -47,7 +48,7 @@ export default function LessonPage() {
         </div>
       ) : (
         <div className="text-center py-20 text-slate-400">
-          <div className="text-4xl mb-4">🚧</div>
+          <div className="flex justify-center mb-4"><Icon name="construction" size={48} className="text-slate-300" /></div>
           <p className="text-lg font-medium">이 레슨은 준비 중입니다</p>
           <p className="text-sm mt-1">곧 만나볼 수 있어요!</p>
         </div>
