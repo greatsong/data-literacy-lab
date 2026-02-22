@@ -3,6 +3,12 @@ import { modules } from '../../data/lessonRegistry';
 import useProgressStore from '../../stores/progressStore';
 import Icon from '../common/Icon';
 
+const iconColorMap = {
+  primary: 'text-primary-500',
+  accent: 'text-accent-500',
+  warm: 'text-warm-600',
+};
+
 export default function Sidebar({ open, onClose }) {
   const { lessonId } = useParams();
   const { isLessonCompleted, getModuleProgress } = useProgressStore();
@@ -53,7 +59,7 @@ export default function Sidebar({ open, onClose }) {
               <div key={mod.id} className="mb-2">
                 {/* 모듈 헤더 */}
                 <div className="flex items-center gap-2 px-3 py-2 text-sm font-semibold text-slate-600 uppercase tracking-wide">
-                  <Icon name={mod.icon} size={16} className="text-slate-500" />
+                  <Icon name={mod.icon} size={16} className={iconColorMap[mod.color] || 'text-slate-500'} />
                   <span className="flex-1 truncate">{mod.title}</span>
                   {progressPct > 0 && (
                     <span className="text-xs font-normal text-primary-500">{progressPct}%</span>
