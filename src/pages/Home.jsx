@@ -31,7 +31,7 @@ export default function Home() {
       {/* 히어로 */}
       <div className="text-center mb-10">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary-50 rounded-full text-sm text-primary-600 font-medium mb-4">
-          고등학생 + 성인 입문자를 위한 실습 중심 학습
+          모두를 위한 실습 중심의 데이터 리터러시 수업!
         </div>
         <h1 className="text-4xl font-bold text-slate-800 mb-4">
           데이터 리터러시 랩
