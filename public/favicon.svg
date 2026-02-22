@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#16a34a"/>
+      <stop offset="100%" stop-color="#4ade80"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <!-- 배경 원 -->
+  <circle cx="32" cy="32" r="30" fill="#f0f9ff" stroke="#bfdbfe" stroke-width="1.5"/>
+  <!-- 막대 차트 -->
+  <rect x="12" y="34" width="8" height="16" rx="2" fill="url(#g3)"/>
+  <rect x="23" y="24" width="8" height="26" rx="2" fill="url(#g2)"/>
+  <rect x="34" y="16" width="8" height="34" rx="2" fill="url(#g1)"/>
+  <!-- 트렌드 라인 -->
+  <path d="M16 33 L27 23 L38 15 L52 10" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- 트렌드 포인트 -->
+  <circle cx="16" cy="33" r="2.5" fill="#fff" stroke="#2563eb" stroke-width="1.5"/>
+  <circle cx="27" cy="23" r="2.5" fill="#fff" stroke="#2563eb" stroke-width="1.5"/>
+  <circle cx="38" cy="15" r="2.5" fill="#fff" stroke="#2563eb" stroke-width="1.5"/>
+  <circle cx="52" cy="10" r="3" fill="#2563eb"/>
+  <!-- 돋보기 -->
+  <circle cx="48" cy="40" r="8" fill="none" stroke="#1e40af" stroke-width="2.5"/>
+  <circle cx="48" cy="40" r="5" fill="#dbeafe" opacity="0.5"/>
+  <line x1="54" y1="46" x2="59" y2="51" stroke="#1e40af" stroke-width="3" stroke-linecap="round"/>
+</svg>
