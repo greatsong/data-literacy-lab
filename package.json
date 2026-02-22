@@ -1,0 +1,24 @@
+{
+  "name": "data-literacy-lab",
+  "version": "1.0.0",
+  "description": "데이터 리터러시 실습 사이트",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 4010",
+    "build": "vite build",
+    "preview": "vite preview --port 4010"
+  },
+  "dependencies": {
+    "plotly.js-dist-min": "^3.4.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-router-dom": "^7.13.0",
+    "zustand": "^5.0.11"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.0",
+    "@vitejs/plugin-react": "^5.1.4",
+    "tailwindcss": "^4.2.0",
+    "vite": "^6.4.1"
+  }
+}
